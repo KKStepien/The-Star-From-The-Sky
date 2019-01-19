@@ -9,11 +9,38 @@ using System.Windows.Forms;
 
 namespace TheStarFromTheSky
 {
-    public partial class Form1 : Form
+    public partial class TSFTSMenu : Form
     {
-        public Form1()
+        public TSFTSMenu()
         {
             InitializeComponent();
         }
+
+        private void TSFTSMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormSignIn nowy = new FormSignIn();
+            nowy.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormRank rank = new FormRank();
+            //this.Close();
+            rank.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormGame game = new FormGame();
+            game.ShowDialog();
+            //this.Close();
+        }
+
+
     }
 }
