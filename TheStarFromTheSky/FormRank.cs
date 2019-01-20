@@ -18,8 +18,27 @@ namespace TheStarFromTheSky
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormRankLists beginner = new FormRankLists();
+            FormRankLists beginner = new FormRankLists("BEGINNER");
             beginner.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormRankLists beginner = new FormRankLists("INTERMEDIATE");
+            beginner.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormRankLists beginner = new FormRankLists("MASTER");
+            beginner.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
     }
 }

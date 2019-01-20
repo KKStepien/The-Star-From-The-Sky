@@ -8,6 +8,7 @@ namespace TheStarFromTheSky
 {
     interface IObjectsController
     {
+        //int Modifier { get; }
         void Move(double yMove, double V);
         double RandomX();
         void Rysuj(Graphics g);

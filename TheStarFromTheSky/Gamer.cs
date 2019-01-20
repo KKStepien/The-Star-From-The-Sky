@@ -67,10 +67,7 @@ namespace TheStarFromTheSky
         {
 
         }
-        //public void Move(double dx)
-        //{
-        //    X = X + dx;
-        //}
+    
         public void Right()
         {
             X = X + 10;

@@ -5,9 +5,10 @@ using System.Text;
 
 namespace TheStarFromTheSky
 {
-    class User
+    public class User
     {
         public string Nickname { get; set; }
         public string Level { get; set; }
+        public int Scores { get; set; }
     }
 }

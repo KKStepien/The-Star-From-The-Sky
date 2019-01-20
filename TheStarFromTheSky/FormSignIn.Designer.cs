@@ -99,6 +99,7 @@
             this.Name = "FormSignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SIGN IN";
+            this.Load += new System.EventHandler(this.FormSignIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

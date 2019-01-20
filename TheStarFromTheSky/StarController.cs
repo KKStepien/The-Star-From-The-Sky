@@ -6,7 +6,7 @@ using System.Text;
 
 namespace TheStarFromTheSky
 {
-    class StarController: ObjectController
+    class StarController : ObjectController
     {
         private Image obraz;
 
@@ -16,6 +16,7 @@ namespace TheStarFromTheSky
             X = RandomX();
         }
 
+        //public override int Modifier { get { return 1; } }
         public override void Rysuj(Graphics g)
         {
             var m = g.Transform;

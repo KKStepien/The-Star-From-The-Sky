@@ -42,12 +42,17 @@
             this.gamer1 = new TheStarFromTheSky.Gamer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Needlabel5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.ScoresLabel11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.clock1 = new TheStarFromTheSky.Clock();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.LogoPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -193,6 +198,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.Needlabel5);
+            this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.ScoresLabel11);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
@@ -200,6 +207,28 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(175, 645);
             this.panel4.TabIndex = 1;
+            // 
+            // Needlabel5
+            // 
+            this.Needlabel5.AutoSize = true;
+            this.Needlabel5.Font = new System.Drawing.Font("Kristen ITC", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Needlabel5.ForeColor = System.Drawing.Color.White;
+            this.Needlabel5.Location = new System.Drawing.Point(104, 156);
+            this.Needlabel5.Name = "Needlabel5";
+            this.Needlabel5.Size = new System.Drawing.Size(40, 44);
+            this.Needlabel5.TabIndex = 8;
+            this.Needlabel5.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Kristen ITC", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(6, 112);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 44);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "NEED:";
             // 
             // ScoresLabel11
             // 
@@ -249,7 +278,6 @@
             this.clock1.Wartosc = 0;
             this.clock1.WielkoscKolka = 40;
             this.clock1.PrzekroczonoProg += new System.Action<int>(this.clock1_PrzekroczonoProg);
-            this.clock1.Load += new System.EventHandler(this.clock1_Load);
             // 
             // timer1
             // 
@@ -262,6 +290,24 @@
             this.timer2.Enabled = true;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // timer3
+            // 
+            this.timer3.Enabled = true;
+            this.timer3.Interval = 1520;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // timer4
+            // 
+            this.timer4.Enabled = true;
+            this.timer4.Interval = 3840;
+            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
+            // 
+            // timer5
+            // 
+            this.timer5.Enabled = true;
+            this.timer5.Interval = 2250;
+            this.timer5.Tick += new System.EventHandler(this.timer5_Tick);
+            // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +318,7 @@
             this.Controls.Add(this.LogoPanel1);
             this.DoubleBuffered = true;
             this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "FormGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "The Star From The Sky";
@@ -309,5 +356,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label ScoresLabel11;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Timer timer4;
+        private System.Windows.Forms.Timer timer5;
+        private System.Windows.Forms.Label Needlabel5;
+        private System.Windows.Forms.Label label4;
     }
 }

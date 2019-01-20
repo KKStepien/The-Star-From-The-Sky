@@ -12,6 +12,8 @@ namespace TheStarFromTheSky
         public double Y { get; set; }
         public double V { get; set; }
 
+       //public abstract int Modifier { get; }
+
         public ObjectController()
         {
             

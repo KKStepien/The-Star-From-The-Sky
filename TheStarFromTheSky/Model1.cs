@@ -19,5 +19,6 @@ namespace TheStarFromTheSky
         public string Nick { get; set; }
         public int Points { get; set; }
         public string Level { get; set; }
+        public DateTime Data { get; set; }
     }
 }

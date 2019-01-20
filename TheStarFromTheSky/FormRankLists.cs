@@ -11,14 +11,110 @@ namespace TheStarFromTheSky
 {
     public partial class FormRankLists : Form
     {
-        public FormRankLists()
+        private string level;
+
+        private void Sort(List<User> users)
         {
-            InitializeComponent();
+            User user = new User();
+            for (int j = 0; j < users.Count() - 1; j++)
+            {
+                for (int i = 0; i < users.Count() - 1; i++)
+                {
+                    if (users[i].Scores < users[i + 1].Scores)
+                    {
+                        user = users[i];
+                        users[i] = users[i + 1];
+                        users[i + 1] = user;
+                    }
+                }
+            }
+            int k= users.Count();
+            if (users.Count() > 10)
+            {
+                k = 10;
+            }
+            for (int i = 0; i < k; i++)
+            {
+                string croops = ".";
+                string name = users[i].Nickname;
+                int number = name.Length;
+                for (int j = 0; j < 75 - (number*2+2); j++)
+                {
+                    croops = croops + ".";
+                }
+                string napis = (i + 1) + ". " + users[i].Nickname + croops + users[i].Scores;
+                listBox1.Items.Add(napis);
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public FormRankLists(string level)
         {
-            //label1.Text = "BeGINNER";
+            InitializeComponent();
+            this.level = level;
+            if (level == "BEGINNER")
+            {
+                label1.Text = "BEGINNER";
+            }
+            else if (level == "INTERMEDIATE")
+            {
+                label1.Text = "INTERMEDIATE";
+            }
+            else
+            {
+                label1.Text = "MASTER";
+            }
+
+            Model1 db = new Model1();
+            var scores = db.Scores;
+            List<User> users = new List<User>();
+            User user;
+
+            if (level == "BEGINNER")
+            {
+                foreach (var item in scores)
+                {
+                    if (item.Level == "BEGINNER")
+                    {
+                        user = new User();
+                        user.Nickname = item.Nick;
+                        user.Scores = item.Points;
+                        users.Add(user);
+                    }
+                }
+                Sort(users);
+            }
+            else if (level == "INTERMEDIATE")
+            {
+                foreach (var item in scores)
+                {
+                    if (item.Level == "INTERMEDIATE")
+                    {
+                        user = new User();
+                        user.Nickname = item.Nick;
+                        user.Scores = item.Points;
+                        users.Add(user);
+                    }
+                }
+                Sort(users);
+            }
+            else
+            {
+                foreach (var item in scores)
+                {
+                    if (item.Level == "MASTER")
+                    {
+                        user = new User();
+                        user.Nickname = item.Nick;
+                        user.Scores = item.Points;
+                        users.Add(user);
+                    }
+                }
+                Sort(users);
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }
