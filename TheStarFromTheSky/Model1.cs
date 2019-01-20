@@ -16,9 +16,48 @@ namespace TheStarFromTheSky
     public class Score
     {
         public int Id { get; set; }
-        public string Nick { get; set; }
-        public int Points { get; set; }
-        public string Level { get; set; }
-        public DateTime Data { get; set; }
+
+        public Score()
+        {
+
+        }
+
+        public Score(string nick, int points, string level)
+        {
+            this.Nick = nick;
+            this.Points = points;
+            this.Level = level;
+            this.Data = DateTime.Now;
+        }
+
+        public string Nick { get; private set; }
+        public int Points { get; private set; }
+        public string Level { get; private set; }
+        public DateTime Data { get; private set; }
+    }
+
+    public class ScoreBuilder
+    {
+        private string nick;
+        private int points;
+        private string level;
+
+        public void SetNick(string nick)
+        {
+            this.nick = nick;
+        }
+
+        public void SetPoints(int points) {
+            this.points = points;
+        }
+
+        public void SetLevel(string level) {
+            this.level = level;
+        }
+
+        public Score Build()
+        {
+            return new Score(nick, points, level);
+        }
     }
 }

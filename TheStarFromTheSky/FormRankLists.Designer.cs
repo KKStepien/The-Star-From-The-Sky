@@ -77,6 +77,7 @@
             this.Name = "FormRankLists";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "The Star From The Sky";
+            this.Load += new System.EventHandler(this.FormRankLists_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

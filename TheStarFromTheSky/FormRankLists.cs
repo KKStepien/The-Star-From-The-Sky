@@ -64,57 +64,64 @@ namespace TheStarFromTheSky
                 label1.Text = "MASTER";
             }
 
-            Model1 db = new Model1();
-            var scores = db.Scores;
-            List<User> users = new List<User>();
-            User user;
+            using(var db = new Model1())
+            {
+                var scores = db.Scores;
+                List<User> users = new List<User>();
+                User user;
 
-            if (level == "BEGINNER")
-            {
-                foreach (var item in scores)
+                if (level == "BEGINNER")
                 {
-                    if (item.Level == "BEGINNER")
+                    foreach (var item in scores)
                     {
-                        user = new User();
-                        user.Nickname = item.Nick;
-                        user.Scores = item.Points;
-                        users.Add(user);
+                        if (item.Level == "BEGINNER")
+                        {
+                            user = new User();
+                            user.Nickname = item.Nick;
+                            user.Scores = item.Points;
+                            users.Add(user);
+                        }
                     }
+                    Sort(users);
                 }
-                Sort(users);
-            }
-            else if (level == "INTERMEDIATE")
-            {
-                foreach (var item in scores)
+                else if (level == "INTERMEDIATE")
                 {
-                    if (item.Level == "INTERMEDIATE")
+                    foreach (var item in scores)
                     {
-                        user = new User();
-                        user.Nickname = item.Nick;
-                        user.Scores = item.Points;
-                        users.Add(user);
+                        if (item.Level == "INTERMEDIATE")
+                        {
+                            user = new User();
+                            user.Nickname = item.Nick;
+                            user.Scores = item.Points;
+                            users.Add(user);
+                        }
                     }
+                    Sort(users);
                 }
-                Sort(users);
-            }
-            else
-            {
-                foreach (var item in scores)
+                else
                 {
-                    if (item.Level == "MASTER")
+                    foreach (var item in scores)
                     {
-                        user = new User();
-                        user.Nickname = item.Nick;
-                        user.Scores = item.Points;
-                        users.Add(user);
+                        if (item.Level == "MASTER")
+                        {
+                            user = new User();
+                            user.Nickname = item.Nick;
+                            user.Scores = item.Points;
+                            users.Add(user);
+                        }
                     }
+                    Sort(users);
                 }
-                Sort(users);
             }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void FormRankLists_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

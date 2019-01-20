@@ -67,17 +67,5 @@ namespace TheStarFromTheSky
         {
 
         }
-    
-        public void Right()
-        {
-            X = X + 10;
-            Refresh();
-        }
-        public void Left()
-        {
-            X = X -10;
-            Refresh();
-        }
-
     }
 }

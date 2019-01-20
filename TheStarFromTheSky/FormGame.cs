@@ -223,6 +223,11 @@ namespace TheStarFromTheSky
         {
 
         }
+
+        private void LiveLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

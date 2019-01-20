@@ -39,7 +39,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.GamePanel6 = new System.Windows.Forms.Panel();
-            this.gamer1 = new TheStarFromTheSky.Gamer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Needlabel5 = new System.Windows.Forms.Label();
@@ -47,12 +46,13 @@
             this.ScoresLabel11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.clock1 = new TheStarFromTheSky.Clock();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
+            this.gamer1 = new TheStarFromTheSky.Gamer();
+            this.clock1 = new TheStarFromTheSky.Clock();
             this.LogoPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -108,6 +108,7 @@
             this.LiveLabel4.Size = new System.Drawing.Size(36, 44);
             this.LiveLabel4.TabIndex = 3;
             this.LiveLabel4.Text = "3";
+            this.LiveLabel4.Click += new System.EventHandler(this.LiveLabel4_Click);
             // 
             // label3
             // 
@@ -116,9 +117,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(222, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 44);
+            this.label3.Size = new System.Drawing.Size(112, 44);
             this.label3.TabIndex = 2;
-            this.label3.Text = "LIVE:";
+            this.label3.Text = "LIFE:";
             // 
             // label2
             // 
@@ -174,18 +175,6 @@
             this.GamePanel6.Size = new System.Drawing.Size(1004, 617);
             this.GamePanel6.TabIndex = 1;
             this.GamePanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.GamePanel6_Paint);
-            // 
-            // gamer1
-            // 
-            this.gamer1.ColorGamer = System.Drawing.Color.DodgerBlue;
-            this.gamer1.dx = 0D;
-            this.gamer1.Location = new System.Drawing.Point(0, 567);
-            this.gamer1.Name = "gamer1";
-            this.gamer1.Size = new System.Drawing.Size(50, 50);
-            this.gamer1.SizeGamer = 50;
-            this.gamer1.TabIndex = 0;
-            this.gamer1.X = 0D;
-            this.gamer1.Load += new System.EventHandler(this.gamer1_Load_1);
             // 
             // panel1
             // 
@@ -263,22 +252,6 @@
             this.panel3.Size = new System.Drawing.Size(175, 645);
             this.panel3.TabIndex = 0;
             // 
-            // clock1
-            // 
-            this.clock1.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clock1.KolorKolka = System.Drawing.Color.White;
-            this.clock1.KolorWartosci = System.Drawing.Color.Black;
-            this.clock1.KolorWwskażnika = System.Drawing.Color.Yellow;
-            this.clock1.Location = new System.Drawing.Point(12, 6);
-            this.clock1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.clock1.Name = "clock1";
-            this.clock1.Prog = 60;
-            this.clock1.Size = new System.Drawing.Size(150, 150);
-            this.clock1.TabIndex = 0;
-            this.clock1.Wartosc = 0;
-            this.clock1.WielkoscKolka = 40;
-            this.clock1.PrzekroczonoProg += new System.Action<int>(this.clock1_PrzekroczonoProg);
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
@@ -307,6 +280,34 @@
             this.timer5.Enabled = true;
             this.timer5.Interval = 2250;
             this.timer5.Tick += new System.EventHandler(this.timer5_Tick);
+            // 
+            // gamer1
+            // 
+            this.gamer1.ColorGamer = System.Drawing.Color.DodgerBlue;
+            this.gamer1.dx = 0D;
+            this.gamer1.Location = new System.Drawing.Point(0, 567);
+            this.gamer1.Name = "gamer1";
+            this.gamer1.Size = new System.Drawing.Size(50, 50);
+            this.gamer1.SizeGamer = 50;
+            this.gamer1.TabIndex = 0;
+            this.gamer1.X = 0D;
+            this.gamer1.Load += new System.EventHandler(this.gamer1_Load_1);
+            // 
+            // clock1
+            // 
+            this.clock1.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clock1.KolorKolka = System.Drawing.Color.White;
+            this.clock1.KolorWartosci = System.Drawing.Color.Black;
+            this.clock1.KolorWwskażnika = System.Drawing.Color.Yellow;
+            this.clock1.Location = new System.Drawing.Point(12, 6);
+            this.clock1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.clock1.Name = "clock1";
+            this.clock1.Prog = 60;
+            this.clock1.Size = new System.Drawing.Size(150, 150);
+            this.clock1.TabIndex = 0;
+            this.clock1.Wartosc = 0;
+            this.clock1.WielkoscKolka = 40;
+            this.clock1.PrzekroczonoProg += new System.Action<int>(this.clock1_PrzekroczonoProg);
             // 
             // FormGame
             // 

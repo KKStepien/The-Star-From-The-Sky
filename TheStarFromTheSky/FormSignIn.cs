@@ -19,6 +19,8 @@ namespace TheStarFromTheSky
             comboBox1.Items.Add("BEGINNER");
             comboBox1.Items.Add("INTERMEDIATE");
             comboBox1.Items.Add("MASTER");
+
+            comboBox1.SelectedIndex = 1;
         }
 
         private void label2_Click(object sender, EventArgs e)
