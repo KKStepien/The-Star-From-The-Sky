@@ -13,9 +13,9 @@ namespace TheStarFromTheSky
     {
         public int Prog { get; set; }
 
-        //public delegate void ProgHandler (int przekroczenie);
+        public delegate void ProgHandler (int przekroczenie);
 
-        public event Action<int> PrzekroczonoProg;
+        public event ProgHandler PrzekroczonoProg;
 
         private Color kolorWskaznika = Color.Yellow;
         public Color KolorWwskażnika
@@ -56,7 +56,10 @@ namespace TheStarFromTheSky
             {
                 wartosc = value;
                 Refresh();
-                if (wartosc == Prog) { PrzekroczonoProg?.Invoke(wartosc - Prog); }
+                if (wartosc == Prog && PrzekroczonoProg != null)
+                {
+                    PrzekroczonoProg(wartosc - Prog);
+                }
 
             }
         }

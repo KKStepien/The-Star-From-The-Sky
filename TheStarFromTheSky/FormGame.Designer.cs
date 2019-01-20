@@ -307,7 +307,7 @@
             this.clock1.TabIndex = 0;
             this.clock1.Wartosc = 0;
             this.clock1.WielkoscKolka = 40;
-            this.clock1.PrzekroczonoProg += new System.Action<int>(this.clock1_PrzekroczonoProg);
+            this.clock1.PrzekroczonoProg += this.clock1_PrzekroczonoProg;
             // 
             // FormGame
             // 
