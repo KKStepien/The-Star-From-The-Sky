@@ -36,9 +36,7 @@ namespace TheStarFromTheSky
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FormGame game = new FormGame();
-            game.ShowDialog();
-            //this.Close();
+          this.Close();
         }
 
 

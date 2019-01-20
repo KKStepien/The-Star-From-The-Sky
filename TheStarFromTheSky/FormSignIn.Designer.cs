@@ -74,6 +74,7 @@
             this.Ok_button1.TabIndex = 8;
             this.Ok_button1.Text = "OK";
             this.Ok_button1.UseVisualStyleBackColor = true;
+            this.Ok_button1.Click += new System.EventHandler(this.Ok_button1_Click);
             // 
             // comboBox1
             // 

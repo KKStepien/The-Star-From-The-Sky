@@ -8,5 +8,6 @@ namespace TheStarFromTheSky
     class User
     {
         public string Nickname { get; set; }
+        public string Level { get; set; }
     }
 }

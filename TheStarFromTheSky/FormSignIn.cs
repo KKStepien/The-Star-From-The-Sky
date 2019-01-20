@@ -29,5 +29,21 @@ namespace TheStarFromTheSky
         {
            
         }
+
+        private void Ok_button1_Click(object sender, EventArgs e)
+        {
+            //using (var db = new Model1())
+            //{
+            //    Score user = new Score();
+            //    user.Nick = textBox1.Text;
+            //    user.Level = comboBox1.Text;
+
+            //    db.Scores.Add(user);
+            //    db.SaveChanges();
+            //}
+            this.Close();
+            FormGame game = new FormGame();
+            game.Show();
+        }
     }
 }
